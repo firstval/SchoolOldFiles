@@ -1,0 +1,237 @@
+<script type='text/javascript'>
+    function formValidator() {
+ 
+ 
+        var firstname = document.getElementById('firstname');
+        var lastname = document.getElementById('lastname');
+		var city = document.getElementById('city');
+        var addr = document.getElementById('addr');
+        var country = document.getElementById('country');
+        var email = document.getElementById('email');
+        var number = document.getElementById('number');
+ 
+        isAlphabet(firstname, "Please enter only letters for your firstname");
+        isAlphabet(lastname, "Please enter only letters for your lastname");
+		isAlphabet(city, "Please enter only letters for city");
+        isAlphanumeric(addr, "Please enter only numbers and letters for address");
+        madeSelection(country, "Please Choose a Country");
+        emailValidator(email, "Please enter a valid email address");
+        isNumeric(number, "Please enter only numbers for contact number");
+       
+        return;
+    }
+ 
+    function notEmpty(elem, helperMsg) {
+        if (elem.value.length == 0) {
+            alert(helperMsg);
+            elem.focus();
+            return false;
+        }
+        return true;
+    }
+ 
+    function isNumeric(elem, helperMsg) {
+        var numericExpression = /^[0-9]+$/;
+        if (elem.value.match(numericExpression)) {
+            return true;
+        } else {
+            alert(helperMsg);
+            elem.focus();
+            return false;
+        }
+    }
+ 
+    function isAlphabet(elem, helperMsg) {
+        var alphaExp = /^[a-zA-Z]+$/;
+        if (elem.value.match(alphaExp)) {
+            return true;
+        } else {
+            alert(helperMsg);
+            elem.focus();
+            return false;
+        }
+    }
+ 
+    function isAlphanumeric(elem, helperMsg) {
+        var alphaExp = /^[0-9a-zA-Z]+$/;
+        if (elem.value.match(alphaExp)) {
+            return true;
+        } else {
+            alert(helperMsg);
+            elem.focus();
+            return false;
+        }
+    }
+ 
+    function madeSelection(elem, helperMsg) {
+        if (elem.value == "Please Choose") {
+            alert(helperMsg);
+            elem.focus();
+            return false;
+        } else {
+            return true;
+        }
+    }
+ 
+ 
+    function emailValidator(elem, helperMsg) {
+        var emailExp = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
+        if (elem.value.match(emailExp)) {
+            return true;
+        } else {
+            alert(helperMsg);
+            elem.focus();
+            return false;
+        }
+    }
+</script>
+ 
+<form onsubmit='return formValidator()'>
+<center><br><br><br><br>
+    <table border=1>
+        <tr>
+            <td>First Name:
+                <td>
+                    <input type='text' id='firstname' />
+                    <tr>
+                        <td>Last Name:
+                            <td>
+                                <input type='text' id='lastname' />
+                                <tr>
+                                    <td>Date of Birth:
+                                        <td>
+                                            <select>
+                                                <option>Month</option>
+                                                <option>January</option>
+                                                <option>February</option>
+                                                <option>March</option>
+                                                <option>April</option>
+                                                <option>May</option>
+                                                <option>June</option>
+                                                <option>July</option>
+                                                <option>August</option>
+                                                <option>September</option>
+                                                <option>October</option>
+                                                <option>November</option>
+                                                <option>December</option>
+                                            </select>
+                                            <select>
+                                                <option>Day</option>
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                                <option>11</option>
+                                                <option>12</option>
+                                                <option>13</option>
+                                                <option>14</option>
+                                                <option>16</option>
+                                                <option>17</option>
+                                                <option>18</option>
+                                                <option>20</option>
+                                                <option>21</option>
+                                                <option>22</option>
+                                                <option>23</option>
+                                                <option>24</option>
+                                                <option>25</option>
+                                                <option>26</option>
+                                                <option>27</option>
+                                                <option>28</option>
+                                                <option>29</option>
+                                                <option>30</option>
+                                                <option>31</option>
+                                            </select>
+                                            <select>
+                                                <option>Year</option>
+                                                <option>2013</option>
+                                                <option>2012</option>
+                                                <option>2011</option>
+                                                <option>2010</option>
+                                                <option>2009</option>
+                                                <option>2008</option>
+                                                <option>2007</option>
+                                                <option>2006</option>
+                                                <option>2005</option>
+                                                <option>2004</option>
+                                                <option>2003</option>
+                                                <option>2002</option>
+                                                <option>2001</option>
+                                                <option>2000</option>
+                                                <option>1999</option>
+                                                <option>1998</option>
+                                                <option>1997</option>
+                                                <option>1996</option>
+                                                <option>1995</option>
+                                                <option>1994</option>
+                                                <option>1993</option>
+                                                <option>1992</option>
+                                                <option>1991</option>
+                                                <option>1990</option>
+                                                <option>1989</option>
+                                                <option>1988</option>
+                                                <option>1987</option>
+                                                <option>1986</option>
+                                                <option>1985</option>
+                                                <option>1984</option>
+                                                <option>1983</option>
+                                                <option>1982</option>
+                                                <option>1981</option>
+                                                <option>1980</option>
+                                            </select>
+                                            <tr>
+                                                <td>Gender:
+                                                    <td>
+                                                        <input type="Radio" name="Group1" value="Male" />Male
+                                                        <input type="Radio" name="Group1" value="Female" />Female
+														<tr>
+            <td>City:
+                <td>
+                    <input type='text' id='city' />
+                                                        <tr>
+                                                            <td>Address:
+                                                                <td>
+                                                                    <textarea cols="20" rows="5" id='addr' /></textarea>
+                                                                    <tr>
+                                                                        <td>Country:
+                                                                            <td>
+                                                                                <select id='country'>
+                                                                                    <option>Choose Country</option>
+                                                                                    <option>Philippines</option>
+                                                                                    <option>United States</option>
+                                                                                    <option>Peru</option>
+                                                                                    <option>Brazil</option>
+                                                                                    <option>India</option>
+                                                                                    <option>Alaska</option>
+                                                                                    <option>Venezuela</option>
+                                                                                    <option>Mexico</option>
+                                                                                    <option>Los Angeles</option>
+                                                                                    <option>Mecaragua</option>
+                                                                                    <option>America</option>
+                                                                                    <option>Australia</option>
+                                                                                    <option>United Kingdom</option>
+                                                                                    <option>Thailand</option>
+                                                                                    <option>United States</option>
+                                                                                </select>
+                                                                                <tr>
+                                                                                    <td>Email:
+                                                                                        <td>
+                                                                                            <input type='text' id='email' />
+                                                                                            <tr>
+                                                                                                <td>Mobile:
+                                                                                                    <td>
+                                                                                                        <input type="text" id="number" />
+                                                                                                        <tr>
+                                                                                                            <td colspan=2>
+																											<center>
+																											
+                                                                                                                <input type='submit' value='SUBMIT' />
+																												&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                                                                                                <input type='reset' value='CLEAR' /></center>
+																												</table></center>
+</form>
